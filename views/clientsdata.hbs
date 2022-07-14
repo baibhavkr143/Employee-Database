@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" comain_headerntent="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/clientstyle.css">
+</head>
+
+<body>
+    {{>navbar}}
+     {{#if sucess}}
+    <div class="alert alert-success">
+  <strong>Success!</strong> data Updated sucessfully
+</div>
+   {{/if}}
+     {{#if sucess1}}
+    <div class="alert alert-success">
+  <strong>Success!</strong> data Deleted sucessfully
+</div>
+   {{/if}}
+
+    <h2 class="heading">Clients</h2>
+    <div class="container" id="container-search">
+        <div class="row" id="mainbox">
+            <div class="col-md-10 col-12 clientBox mx-auto">
+                <a href="#" class="clientname">name</a>
+                <p class="mobileno">Mobile No</p>
+                <div class="ud-icon">
+                    <h3 class="action">Action</h3>;
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const mainbody = document.getElementById("mainbox");
+
+
+
+        const getdata = async () => {
+            try {
+                const data = await fetch("http://localhost:5000/register");
+                const realdata = await data.json();
+                //console.log(realdata);
+                for (var i = 0; i < realdata.length; i++) {
+                    appenddata(realdata[i]);
+
+                    console.log(realdata[i]._id);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getdata();
+
+        const appenddata = (data) => {
+            const clientname = document.createElement("a");
+            clientname.setAttribute("class", "clientname");
+            clientname.href=`http://localhost:5000/register/one/${data._id}`;
+            //for name
+            const clientBox = document.createElement("div");
+            clientBox.classList.add("clientBox");
+            clientBox.classList.add("col-md-10");
+            clientBox.classList.add("col-12");
+            clientBox.classList.add("mx-auto");
+
+
+            clientBox.appendChild(clientname);
+            mainbody.appendChild(clientBox);
+            clientname.innerHTML = `${data.name}`;
+
+
+            //for mobile no
+           const mobileNo=document.createElement("p");
+           mobileNo.classList.add("mobileno");
+           clientBox.appendChild(mobileNo);
+           mobileNo.innerHTML=`${data.mobile}`;
+
+            
+            //for icon
+            const ud_icon = document.createElement("div");
+            ud_icon.classList.add("ud-icon");
+            const icon1 = document.createElement("a");
+            const icon2 = document.createElement("a");
+            const i1=document.createElement("i");
+            const i2=document.createElement("i");
+            icon2.addEventListener("click",()=>{
+                const x=confirm("do you really want to delete data");
+                if(x==1)
+                icon2.href=`http://localhost:5000/register/delete/${data._id}`;
+                else icon2.href="#";
+            })
+
+            icon1.href=`http://localhost:5000/register/api/${data._id}`;
+            
+
+
+            i1.classList.add("fas");
+            i1.classList.add("fa-edit");
+            i1.classList.add("manage-icon");
+            
+            i2.classList.add("fas");
+            i2.classList.add("fa-trash-alt");
+            i2.classList.add("manage-icon");
+
+             clientBox.appendChild(ud_icon);
+             ud_icon.appendChild(icon1);
+             ud_icon.appendChild(icon2);
+             icon1.appendChild(i1);
+             icon2.appendChild(i2);
+
+        }
+
+
+
+
+    </script>
+</body>

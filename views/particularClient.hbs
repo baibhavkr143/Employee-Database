@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" comain_headerntent="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/particularclient.css">
+</head>
+
+<body>
+    
+    {{>navbar}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-12 detailbox mx-auto">
+            <h3>Personal detail</h3>
+              <p class="name">Name:{{name}} </p>
+              <p class="name">DOB:{{DOB}} </p>
+              <p class="name">Mobile No:{{mobile}} </p>
+              <p class="name">Adhar:{{adhar}} </p>
+              <p class="emailadress">Email:{{email}} </p>
+              <p class="emailadress">Adress:{{adress}} </p>
+
+            </div>
+            <div class="col-md-10 detailbox col-12 mx-auto">
+                <h3>Pancard Detail</h3>
+                <p class="name">Pan_id:{{pan_id}} </p>
+                  <p class="name">IT Pasword:{{it_pasword}} </p>
+                  <p class="emailadress">Balance Sheet:{{balanceSheet}} </p>
+
+            </div>
+            <div class="col-md-10 detailbox col-12 mx-auto">
+                <h3>GST Detail</h3>
+                <p class="name">GST No:{{GSTNo}} </p>
+              <p class="name">Registration:{{Registration}} </p>
+              <p class="name">GST Id:{{GST_id}} </p>
+              <p class="name">GSTpasword:{{GSTpasword}}</p>
+
+            </div>
+        </div>
+    </div>
+</body>

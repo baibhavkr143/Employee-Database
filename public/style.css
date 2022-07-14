@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+
+}
+:root{
+    --bg-color:#1e272e;
+    --color:#0097e6;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main_menu{
+    background-color: var(--bg-color);
+    
+
+}
+
+.navbar{
+    background-color: var(--bg-color);
+    color: white;
+    /* height:5.4rem; */
+}
+.navbar ul li{
+    margin-left: 2.5rem;
+}
+.navbar a{
+    color: white;
+    font-size: 2rem;
+    transition-duration:.4sec;
+    transition-property: all;
+}
+.navbar a:hover{
+    color: var(--color);
+}
+.fa-snowflake{
+    color:var(--color) ;
+    transition: all linear;
+    animation: rot 2s linear infinite;
+}
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.main_header {
+    
+    margin-top: 9rem;
+    
+}
+
+#mainform {
+    width: 35%;
+}
+.form-inline .form-control {
+    border: none;
+    display: inline-block;
+    width: 75%;
+    height: 4rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}
+button.btn {
+    display: inline-block;
+    width: 22%;
+    border:none;
+    background-color: red;
+    height: 4rem;
+    margin: none;
+    border-radius: 1.4rem;
+    color: white;
+    font-size: 1.8rem;
+    transition-property: all;
+    transition-duration: .4sec;
+}
+.btn:hover {
+    height:4.2rem;
+    background-color:white;
+    color:black;
+    
+}
+.icon{
+    font-size: 2.4rem;
+}
+.main_body {
+    margin-top: 7rem;
+}
+
+.card-title{
+    font-size: 2.6rem;
+}
+.card-text{
+    font-size: 1.3rem;
+}
+.card-button {
+    width: 30%;
+    height: 3.6rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    box-shadow: 2px 2px 3px 1.3px black;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}

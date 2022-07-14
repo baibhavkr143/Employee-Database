@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.action {
+    font-size: 3.3rem;
+    font-style: oblique;
+    margin-right: 1rem;
+    margin-top: -0.7rem;
+}
+
+.heading {
+    width: 40%;
+    margin: 4rem auto;
+    text-align: center;
+    font-size: 5rem;
+    font-family: inherit;
+    text-shadow: 2px 2px 4px #bb1515;
+}
+
+#container-search{
+    border:2px solid black;
+    margin-top: 7rem;
+    box-shadow: 1px 1px 5px 1px black;
+    margin-bottom: 5rem;
+
+}
+
+.clientBox{
+    height: 5rem;
+    border:1px solid black;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    box-shadow: 1px 1px 5px 1px black;
+}
+a.clientname {
+    display: inline-block;
+    font-size: 3rem;
+    text-decoration: none;
+    color: black;
+}
+p.mobileno {
+    display: inline-block;
+    font-size: 2.7rem;
+    /* margin: auto; */
+    margin-left: 0rem;
+    font-family: fangsong;
+    width: 39%;
+    /* text-align: center; */
+    position: absolute;
+    left: 38rem;
+    margin-top: .4rem;
+}
+.ud-icon {
+    display: flex;
+    list-style: none;
+    float: right;
+    margin-top: .7rem;
+}
+.manage-icon {
+    color: black;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    font-size: 3rem;
+}
+
+
+

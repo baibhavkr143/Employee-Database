@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" comain_headerntent="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/clientStyle.css">
+</head>
+
+<body>
+    {{>navbar}}
+    {{#if sucess}}
+    <div class="alert alert-success">
+        <strong>Success!</strong> data added sucessfully
+    </div>
+    {{/if}}
+    {{!-- main header --}}
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <nav class="navbar navbar-expand-lg ">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#"><i class="fas fa-search-plus icon"></i>Filling Status</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/customer"><i class="fas fa-user-plus icon"></i>Add
+                                    Customer</a>
+                            </li>
+
+
+                        </ul>
+
+
+
+                        <form class="form-inline my-2 my-lg-0" id="mainform">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search Customer"
+                                aria-label="Search" id="searchcustomer">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                id="searchbtn" value="#">Search</button>
+
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid main_body " id="maincont">
+        <div class="row">
+            <div class="col-md-4 col-10 h-100">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="tax return1.jpg" class="card-img-top " alt="...">
+
+                        <h3 class="card-title">IT Return Filling</h3>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-danger card-button ">Go </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-10 h-100">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="gst.jpg" class="card-img-top" alt="...">
+                        <h3 class="card-title">GST Registration & Return Filling</h3>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-danger card-button">Go </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-10 h-100">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="epf.jpeg" class="card-img-top" alt="...">
+                        <h3 class="card-title">EPF & ESIC Registration &Return Filling</h3>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-danger card-button">Go </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- search result html code --}}
+    <div class="container" id="container-search">
+        <div class="row" id="mainbox">
+            <div class="col-md-10 col-12 clientBox mx-auto">
+                <a href="#" class="clientname">name</a>
+                <p class="mobileno">Mobile No</p>
+                <div class="ud-icon">
+                    <h3 class="action">Action</h3>;
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const mainform = document.getElementById("mainform");
+        const button = document.getElementById("searchbtn");
+        const search = document.getElementById("searchcustomer");
+        const linkcontainer = document.getElementById("maincont");
+        const searchcontainer = document.getElementById("container-search");
+        searchcontainer.style.display = "none";
+
+
+        mainform.addEventListener("submit",async(e)=>{
+            try{
+               e.preventDefault();
+               console.log(search.value);
+               const person=search.value;
+               const data=await fetch(`http://localhost:5000/register/person/${person}`);
+               const realdata=await data.json();
+               console.log(`data is ${realdata}`);
+            }catch(error){
+                console.log(error);   
+            }
+
+
+            
+
+        })
+    </script>
+</body>
+
+</html>

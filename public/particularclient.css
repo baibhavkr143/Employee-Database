@@ -1,0 +1,31 @@
+html{
+    font-size: 62.5%;
+}
+.container {
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 1px black;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+.detailbox {
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 1px black;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+h3 {
+    font-size: 3rem;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black;
+}
+.name {
+    display: inline-block;
+    width: 49%;
+    font-size: 2rem;
+    font-family: ui-monospace;
+}
+.emailadress {
+    font-size: 2rem;
+    font-family: ui-monospace;
+}

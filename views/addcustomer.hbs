@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" comain_headerntent="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="customerstyle.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container  form-container">
+
+        <form action="/register" method="POST">
+            <div class="row">
+                {{!-- personal information --}}
+                <div class="col-md-10 col-12 mx-auto info">
+                    <h3 class="info-head">Personal info</h3>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="file-no" name="file_No" placeholder="File No">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="customer-name" name="name" placeholder="name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="Email" name="email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="MobileNo">Mobile No</label>
+                            <input type="text" class="form-control" id="mobile-no" name="mobile">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="DOB">DOB</label>
+                            <input type="date" class="form-control" id="DOB" name="DOB">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Adhar">Adhar Number</label>
+                            <input type="text" class="form-control" id="adharnumber" name="adhar">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <input type="text" class="form-control" id="Address" name="adress">
+                    </div>
+
+                </div>
+                {{!-- tax information --}}
+                <div class="col-md-10 col-12 mx-auto info">
+                    <h3 class="info-head">Tax info</h3>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="PanId">Pan Id</label>
+                            <input type="text" class="form-control" id="pan-id" name="pan_id">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="panPasword">Pasword</label>
+                            <input type="text" class="form-control" id="it_pasword" name="it_pasword">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="balancesheet">Balance Sheet</label>
+                        <input type="text" class="form-control" id="Balance-sheet" placeholder="1234 Main St" name="Balance_sheet">
+                    </div>
+
+                </div>
+                {{!-- GST info --}}
+                <div class="col-md-10 col-12 mx-auto info">
+                    <h3 class="info-head">GST info</h3>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="GST No" name="GstNo">
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="registration-scheme" name="Registration">
+                                <option>Registration scheme</option>
+                                <option>default1</option>
+                                <option>default2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="GST Id">GST Id</label>
+                            <input type="text" class="form-control" name="GstId">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="GstPasword">GST Pasword</label>
+                            <input type="text" class="form-control" id="GST-pasword" name="GstPasword">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {{!-- TAN info --}}
+                <div class="col-md-10 col-12 mx-auto info">
+                    <h3 class="info-head">TAN Info</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="TAN No" name="tanNo">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="TanId">Tan Id</label>
+                            <input type="text" class="form-control" id="Tan-id" name="Tanid">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="panPasword">Tan Pasword</label>
+                            <input type="text" class="form-control" name="tanPasword">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" value="/register">Register</button>
+        </form>
+    </div>
+
+
+
+
+ <script src="app.js"></script>
+</body>
